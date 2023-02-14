@@ -14,16 +14,7 @@ const listOfImages = galleryItems
   .join('');
 
 gallery.insertAdjacentHTML('afterbegin', listOfImages);
-gallery.addEventListener('click', onClickImg);
-
-function onClickImg(event) {
-  event.preventDefault();
-
-  if (!event.target.classList.contains('gallery__image')) {
-    return;
-  }
-  let lightbox = new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    captionsData: 'alt',
-  });
-}
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+});
